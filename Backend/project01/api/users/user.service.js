@@ -4,12 +4,15 @@ module.exports = {
     createUser: (data, callback) => {
         pool.query(
             `insert into registration(id, firstname, lastname, gender, email, password, number)
-                        values(?,?,?,?)`,
+                        values(?,?,?,?,?,?,?)`,
             [
+                data.id,
+                data.firstname,
+                data.lastname,
+                data.gender,
                 data.email,
                 data.password,
-                data.studio_name,
-                data.business_add
+                data.number,
             ],
             (error, results, fields) => {
                 if (error) {
@@ -46,7 +49,7 @@ module.exports = {
         );
     },
 
-    updateUser: (id, data, callback) => {
+    updateUser: (data, callback) => {
         pool.query(
             `update registration set firstname=?,lastname=?,gender=?,email=?,password=?,number=? where id = ?`,
             [
@@ -56,7 +59,6 @@ module.exports = {
                 data.email,
                 data.password,
                 data.number,
-                id
             ],
             (error, results, fields) => {
                 if (error) {
@@ -91,5 +93,5 @@ module.exports = {
                 return callback(null,results[0]);
             }
         );
-    }
+    },
 };

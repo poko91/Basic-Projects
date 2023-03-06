@@ -57,10 +57,9 @@ module.exports = {
 
     updateUser: (req, res) => {
         const body = req.body;
-        const id = req.params.id;
         const salt = genSaltSync(10);
         body.password = hashSync(body.password, salt);
-        updateUser(id, body, (err, results) => {
+        updateUser(body, (err, results) => {
             if (err) {
                 console.log(err);
                 return;

@@ -1,0 +1,122 @@
+/* Css Custom Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+:root {
+  /* Color */
+  --body-bg: linear-gradient(79deg, #8e41e5, #f17ef1 60%, #dda23d);
+  --white: #fff;
+  --purple: #8e41e5;
+  --orange: #dda23d;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: var(--body-bg);
+  color: var(--white);
+}
+
+.auth-form-container,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 4rem;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    transition: 1s;
+  }
+}
+
+h2 {
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  text-align: left;
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--purple);
+}
+
+input::content {
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  background-color: var(--white);
+  padding: 1.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.btn {
+  margin-top: 2rem;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.link-btn {
+  background: none;
+  color: var(--white);
+  text-decoration: underline;
+  cursor: pointer;
+}
